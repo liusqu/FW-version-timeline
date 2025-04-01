@@ -537,7 +537,7 @@
                 
                 // 计算日期在时间线上的位置
                 function calculateDatePosition(date) {
-                    const targetDate = new Date(date);
+                    const targetDate = new Date(date + 'T12:00:00');  // 添加中午12点来避免时区问题
                     const totalDays = (CONFIG.timelineEnd - CONFIG.timelineStart) / (1000 * 60 * 60 * 24);
                     const passedDays = (targetDate - CONFIG.timelineStart) / (1000 * 60 * 60 * 24);
                     
