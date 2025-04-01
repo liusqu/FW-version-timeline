@@ -547,7 +547,7 @@
                 
                 // 格式化日期显示 (MM/DD 格式，不显示年份)
                 function formatDateDisplay(dateString) {
-                    const date = new Date(dateString);
+                    const date = new Date(dateString + 'T12:00:00'); // 添加中午12点来避免时区问题
                     const month = String(date.getMonth() + 1);
                     const day = String(date.getDate());
                     return `${month}/${day}`;
