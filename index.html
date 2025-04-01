@@ -701,13 +701,13 @@
                     });
                     
                     // 在ms-qa结束位置添加release标签
-                    if (msQaStage && releaseStage && msQaStage.endDate && releaseStage.endDate) {
-                        const msQaEndPosition = calculateDatePosition(msQaStage.endDate);
+                    if (releaseStage && releaseStage.endDate) {
+                        const releasePosition = calculateDatePosition(releaseStage.endDate);
                         
                         const releaseLabel = document.createElement('div');
                         releaseLabel.className = 'release-date';
                         releaseLabel.textContent = `Release: ${formatDateDisplay(releaseStage.endDate)}`;
-                        releaseLabel.style.left = `${msQaEndPosition}px`;
+                        releaseLabel.style.left = `${releasePosition}px`;
                         timelineArea.appendChild(releaseLabel);
                     }
                     
